@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\KelasModelController;
+use App\Http\Controllers\PetugasController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SppController;
 /*
@@ -30,3 +32,6 @@ Route::controller(SppController::class)->group(function () {
     Route::put('/spp/{id}', 'update')->name('spp.update');
     Route::delete('/spp/{id}', 'destroy')->name('spp.destroy');
 });
+
+Route::resource('/kelas', KelasModelController::class);
+Route::resource('/petugas', PetugasController::class);
